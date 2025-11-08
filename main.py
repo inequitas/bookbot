@@ -1,3 +1,5 @@
+from stats import count_words
+
 def main():
     output = count_words(get_book_text("books/frankenstein.txt"))
     print(f"Found {output} total words")
