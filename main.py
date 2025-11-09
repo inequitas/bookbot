@@ -1,13 +1,18 @@
-from stats import count_words,count_letters
+from stats import get_num_words, get_chars_dict
+
 
 def main():
-    output = count_words(get_book_text("books/frankenstein.txt"))
-    print(f"Found {output} total words")
-    county = count_letters(get_book_text("books/frankenstein.txt"))
-    print(f"Also {county} total letters")
-def get_book_text(path_to_file):
-    with open(path_to_file) as f:
-        file_contents = f.read()
-    return file_contents
-main()
+    book_path = "books/frankenstein.txt"
+    text = get_book_text(book_path)
+    num_words = get_num_words(text)
+    chars_dict = get_chars_dict(text)
+    print(f"Found {num_words} total words")
+    print(chars_dict)
 
+
+def get_book_text(path):
+    with open(path) as f:
+        return f.read()
+
+
+main()
