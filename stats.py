@@ -12,3 +12,6 @@ def get_chars_dict(text):
         else:
             chars[lowered] = 1
     return chars
+
+#def sort_word_list(input):
+    #return input["num"]
